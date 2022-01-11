@@ -1,0 +1,479 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>首页</title>
+<link rel="stylesheet" href="css/main.css" />
+<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript">
+    $().ready(function(){
+        var curIndex=0;
+        var timeInterval=3000;
+        var arr=new Array();
+        var arr1=new Array()
+        var arr2=new Array()
+        var arr3=new Array()
+        arr[0]="images/ylnb2.jpg";
+        arr[1]="images/ggxg.jpg";
+        arr[2]="images/lyf.jpg";
+
+        arr1[0]="玉林牛巴";
+        arr1[1]="贵港膏蟹";
+        arr1[2]="南宁老友粉";
+
+        arr2[0]="轻薄甘香，殷红浮脆";
+        arr2[1]="膏质稠密，香滑可口";
+        arr2[2]="酸、辣、咸、香兼备";
+
+        arr3[0]="正宗玉林牛巴，其颜色半透明，色似咖啡，油亮，香味浓郁，咸甜适口，鲜美爽口，韧而不坚。色泽暗亮，气味醇香，肉质细而耐嚼，入口生香，令人回味。 肉质细而有嚼劲，吃后满口生香，堪称地方一绝。";
+        arr3[1]="金秋时节，菊香蟹肥。品蟹的方式颇多，可以炒吃或煮吃，也可以做蟹酱汤吃等等。贵港市曲口镇的膏蟹最为有名，是这里名副其实的特产。";
+        arr3[2]="南宁人认为酸辣可口的老友粉夏天吃着开胃，冬天吃着驱寒。老友粉是当地没有阶层分化的小吃代表，非常具有民生气质。这种粉能以自己独特的方式，把酸和辣巧妙的结合在一起，形成了南宁小吃的独特风味之一。";
+
+        setInterval(changeImg,timeInterval);
+        function changeImg(){
+          if(curIndex==arr.length-1){
+            curIndex=0;
+          }else{
+            curIndex+=1;
+          }
+          $("#banner_img").attr("src",arr[curIndex]); 
+          $("#bcon_1").text(arr1[curIndex])
+          $("#bcon_2").text(arr2[curIndex])
+          $("#bcon_3").text(arr3[curIndex])
+        }
+
+        $("#b_left").click(function(){
+            changeImg();
+        })
+
+        $("#b_right").click(function(){
+          if(curIndex==0){
+            curIndex=2;
+          }else{
+            curIndex-=1;
+          }
+          $("#banner_img").attr("src",arr[curIndex]); 
+          $("#bcon_1").text(arr1[curIndex])
+          $("#bcon_2").text(arr2[curIndex])
+          $("#bcon_3").text(arr3[curIndex])
+        })
+
+        $("#menu1").click(function(){
+            $("#mj_con1").css("display","block");
+            $("#mj_con2").css("display","none");
+            $("#mj_con3").css("display","none");
+            $("#mj_con4").css("display","none");
+            $("#menu1").attr("class","menu_a ck");
+            $("#menu2").attr("class","menu_a");
+            $("#menu3").attr("class","menu_a");
+            $("#menu4").attr("class","menu_a");
+        })
+
+        $("#menu2").click(function(){
+            $("#mj_con1").css("display","none");
+            $("#mj_con2").css("display","block");
+            $("#mj_con3").css("display","none");
+            $("#mj_con4").css("display","none");
+            $("#menu1").attr("class","menu_a");
+            $("#menu2").attr("class","menu_a ck");
+            $("#menu3").attr("class","menu_a");
+            $("#menu4").attr("class","menu_a");
+        })
+
+        $("#menu3").click(function(){
+            $("#mj_con1").css("display","none");
+            $("#mj_con2").css("display","none");
+            $("#mj_con3").css("display","block");
+            $("#mj_con4").css("display","none");
+            $("#menu1").attr("class","menu_a");
+            $("#menu2").attr("class","menu_a");
+            $("#menu3").attr("class","menu_a ck");
+            $("#menu4").attr("class","menu_a");
+        })
+
+        $("#menu4").click(function(){
+            $("#mj_con1").css("display","none");
+            $("#mj_con2").css("display","none");
+            $("#mj_con3").css("display","none");
+            $("#mj_con4").css("display","block");
+            $("#menu1").attr("class","menu_a");
+            $("#menu2").attr("class","menu_a");
+            $("#menu3").attr("class","menu_a");
+            $("#menu4").attr("class","menu_a ck");
+        })
+
+      })
+</script>
+</head>
+
+<body>
+	<div class="navbar">
+ 		<div class="navbar-inner">
+            <div class="container">
+                <a href="#" class="brand">
+                    <img src="images/logo.png" width="130" height="45" alt="Logo" />
+                </a>
+                <div class="nav-menu">
+                    <ul>
+                        <li class="active"><a style="border: 1px solid #FECE1A;" href="#home">首页</a></li>
+                        <li><a href="product.html">活动专区</a></li>
+                        
+                        <li><a href="food_history.html">美食历史</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="zp.html">招贤纳士</a></li>
+                        <li><a href="gwc.html">购物车</a></li>
+                        <li><a href="login.html">登录账户</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- top end -->
+
+    <!-- banner start -->
+ <div class="banner">
+   	  <div class="triangle"></div>
+    	<div class="mask">
+          <div class="zj-1">         
+            <div class="zj-2" style="float:left;line-height: 600px;">
+                <a class="a_left" id="b_left"></a>
+            </div>
+            <div class="zj-2" style=" float:right;line-height: 600px;">
+                <a class="a_right" id="b_right"></a>
+            </div>
+            <div class="banner_content">
+                <div class="banner_left">
+                    <div class="zj-3" ><h1 id="bcon_1">玉林牛巴</h1></div>
+                    <div class="zj-4" id="bcon_2">轻薄甘香，殷红浮脆</div>
+                    <div class="zj-5" id="bcon_3">
+                            正宗玉林牛巴，其颜色半透明，色似咖啡，油亮，香味浓郁，咸甜适口，鲜美爽口，韧而不坚。色泽暗亮，气味醇香，肉质细而耐嚼，入口生香，令人回味。 肉质细而有嚼劲，吃后满口生香，堪称地方一绝。
+                    </div>
+                </div>
+                <div class="zj-6"><img id="banner_img" src="images/ylnb2.jpg" style="width:320px; height:224px"></div>
+            </div>
+          </div>
+        </div>
+    	<div class="ban_con">           
+            <div class="da-arrows">
+                <span class="da-arrows-prev"></span>
+                <span class="da-arrows-next"></span>
+            </div>
+        </div>
+    </div>
+    <div class="lhw">
+		<div class="lhw-1">
+        	<div class="lhw-1-1">
+            	<h13>想吃到家乡的味道吗？</h13>
+            	<p>到我这里来吧，我可以让你找到家乡的味道。</p>
+            </div>
+             <div class="yz-1">
+             	<div class="yz-1-1">
+                    <div class="circle">
+                        <img src="images/yz3.jpg"alt="peoject 5" width="160px" height="160px">
+                    </div>
+                	<h3>容县红心柚</h3>
+                    <p style="color:#FFF">果实硕大，扁球形或梨形</p>
+                </div>
+            </div>
+            <div class="yz-2">
+                <div class="yz-2-2">
+                    <div class="circle">
+                        <img src="images/mg2.jpg" alt="peojet 5" width="160px" height="160px">
+                    </div>
+                    <h3>广西田东芒果</h3>
+                    <p style="color:#FFF">果肉厚，质腻滑，纤维少</p>
+                    </div>
+            </div>
+            <div class="yz-3">
+             	<div class="yz-3-3">
+                    <div class="circle">
+                        <img src="images/glshj1.jpg" alt="peojet 5" width="160px" height="160px">
+                    </div>
+                    <h3>桂林三花酒</h3>
+                    <p style="color:#FFF">无色透明，蜜香清雅</p>
+             	</div>
+            </div>
+        </div>    
+    </div>
+	<div class="adc">
+	  <div class="triangle"></div>
+	  <div class="adc-1">
+        <div class="jgg">
+        	<h1>你以为我不知道你们来自广西各地？</h1>
+            <p style="color:#000;">我们有广西各个地方的特产，我们都能满足你。</p>
+        </div>
+        	
+            <div class="mj">
+              <div class="zj-nemu">
+                <div>
+                    <ul>
+                        <li class="active"><a class="menu_a ck" id="menu1"><p1>广&nbsp;&nbsp;&nbsp;&nbsp;西</p1></a></li>
+                        <li><a class="menu_a" id="menu2">桂&nbsp;&nbsp;&nbsp;&nbsp;林</a></li>
+                        <li><a class="menu_a" id="menu3">玉&nbsp;&nbsp;&nbsp;&nbsp;林</a></li>
+                        <li><a class="menu_a" id="menu4">崇&nbsp;&nbsp;&nbsp;&nbsp;左</a></li>
+                       
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <div id="mj_con1" style="display: block;">
+                <div class="mj-1">
+                    <div class="chy-1">
+                        <img src="images/ly.jpg" alt="peoject 5" width="370px" height="240px">
+                       <h3>广西桂平</h3>
+                       <p>龙眼</p>
+                    </div>
+                    <div class="chy-2">
+                        <img src="images/mg1 .jpg" alt="peoject 5" width="370px" height="240">
+                        <h3>广西田东</h3>
+                        <p>芒果</p>
+                    </div>
+                    <div class="chy-3">
+                        <img src="images/yz4.jpg"alt="peoject 5" width="370px" height="240">
+                        <h3>广西容县</h3>
+                        <p>沙田柚</p>
+                        </div>
+                </div>
+                <div class="mj-2">
+                    <div class="chy-1">
+                        <img src="images/ylnb1.jpg" alt="peoject 5" width="370px" height="240">
+                        <h3>玉林</h3>
+                        <p>牛巴</p>                
+                    </div>
+                    <div class="chy-2"><img src="images/hyd3.jpg" alt="peoject 5" width="370" height="240"><h3>广西北海</h3>
+                        <p>海鸭蛋</p>
+                    </div>
+                    <div class="chy-3"><img src="images/glshj1.jpg" alt="peoject 5" width="370" height="240">
+                    <h3>广西桂林</h3>
+                     <p>三花酒</p>
+                 </div>
+                </div>
+                <div class="mj-3">
+                    <div class="chy-1"><img src="images/njz1.jpg" alt="peoject 5" width="370" height="240">
+                    <h3>都安</h3>
+                    <p>糍粑</p>
+                   </div>
+                    <div class="chy-2"><img src="images/lsf1.jpg" alt="peoject 5" width="370" height="240">
+                    <h3>桂林</h3>
+                     <p>螺蛳粉</p>
+                        </div>
+                    <div class="chy-3"><img src="images/ggxg.jpg" alt="peoject 5" width="370" height="240">
+                       <h3>贵港</h3>
+                        <p>膏蟹</p>
+                    </div>
+                </div>
+            </div>
+            <div id="mj_con2" style="display: none;">
+                <div class="mj-1">
+                    <div class="chy-1">
+                        <img src="images/lajiaojiang1.jpg" alt="peoject 5" width="370px" height="240px">
+                       <h3>辣椒酱</h3>
+                       <p>桂林</p>
+                    </div>
+                    <div class="chy-2">
+                        <img src="images/matigao2.jpg" alt="peoject 5" width="370px" height="240">
+                        <h3>马蹄糕</h3>
+                        <p>桂林</p>
+                    </div>
+                    <div class="chy-3">
+                        <img src="images/lingchuantizi.jpg"alt="peoject 5" width="370px" height="240">
+                        <h3>灵川提子</h3>
+                        <p>桂林</p>
+                        </div>
+                </div>
+                <div class="mj-2">
+                    <div class="chy-1">
+                        <img src="images/nantang.jpg" alt="peoject 5" width="370px" height="240">
+                        <h3>南糖</h3>
+                        <p>桂林</p>                
+                    </div>
+                    <div class="chy-2"><img src="images/wangao1.jpg" alt="peoject 5" width="370" height="240">
+                        <h3>碗糕</h3>
+                        <p>桂林</p>
+                    </div>
+                    <div class="chy-3"><img src="images/zhutongfan1.jpg" alt="peoject 5" width="370" height="240">
+                    <h3>竹筒饭</h3>
+                     <p>桂林</p>
+                 </div>
+                </div>
+                <div class="mj-3">
+                    <div class="chy-1"><img src="images/glshj1.jpg" alt="peoject 5" width="370" height="240">
+                    <h3>三花酒</h3>
+                    <p>桂林</p>
+                   </div>
+                    <div class="chy-2"><img src="images/timgS35.jpg" alt="peoject 5" width="370" height="240">
+                    <h3>恭城月柿</h3>
+                     <p>桂林</p>
+                        </div>
+                    <div class="chy-3"><img src="images/lajiaojiang.jpg" alt="peoject 5" width="370" height="240">
+                       <h3>辣椒酱</h3>
+                        <p>桂林</p>
+                    </div>
+                </div>
+            </div>
+            <div id="mj_con3" style="display: none;">
+                <div class="mj-1">
+                    <div class="chy-1">
+                        <img src="images/gongwan3.jpg" alt="peoject 5" width="370px" height="240px">
+                       <h3>贡丸</h3>
+                       <p>玉林</p>
+                    </div>
+                    <div class="chy-2">
+                        <img src="images/pingguxiang1.jpg" alt="peoject 5" width="370px" height="240">
+                        <h3>平谷香蕉</h3>
+                        <p>玉林</p>
+                    </div>
+                    <div class="chy-3">
+                        <img src="images/xinxiang.jpg"alt="peoject 5" width="370px" height="240">
+                        <h3>心香凤腊</h3>
+                        <p>玉林</p>
+                    </div>
+                </div>
+                <div class="mj-2">
+                    <div class="chy-1">
+                        <img src="images/gongjv.jpg" alt="peoject 5" width="370px" height="240">
+                        <h3>贡桔</h3>
+                        <p>玉林</p>                
+                    </div>
+                    <div class="chy-2"><img src="images/cmt.jpg" alt="peoject 5" width="370" height="240">
+                        <h3>炒米糖</h3>
+                        <p>玉林</p>
+                    </div>
+                    <div class="chy-3"><img src="images/ly.jpg" alt="peoject 5" width="370" height="240">
+                    <h3>龙眼</h3>
+                     <p>玉林</p>
+                 </div>
+                </div>
+                <div class="mj-3">
+                    <div class="chy-1"><img src="images/xinxiang3.jpg" alt="peoject 5" width="370" height="240">
+                    <h3>腊肉</h3>
+                    <p>玉林</p>
+                   </div>
+                    <div class="chy-2"><img src="images/ltj.jpg" alt="peoject 5" width="370" height="240">
+                    <h3>北流凉亭鸡</h3>
+                     <p>玉林</p>
+                        </div>
+                    <div class="chy-3"><img src="images/ym.jpg" alt="peoject 5" width="370" height="240">
+                       <h3>凤山杨梅</h3>
+                        <p>玉林</p>
+                    </div>
+                </div>
+            </div>
+            <div id="mj_con4" style="display: none;">
+                <div class="mj-1">
+                    <div class="chy-1">
+                        <img src="images/wulongcha2.jpg" alt="peoject 5" width="370px" height="240px">
+                       <h3>龙州乌龙茶</h3>
+                       <p>崇左</p>
+                    </div>
+                    <div class="chy-2">
+                        <img src="images/fengzhuangxiangm2.jpg" alt="peoject 5" width="370px" height="240">
+                        <h3>冯庄乡米</h3>
+                        <p>崇左</p>
+                    </div>
+                    <div class="chy-3">
+                        <img src="images/heilan1.jpg"alt="peoject 5" width="370px" height="240">
+                        <h3>龙头黑榄</h3>
+                        <p>崇左</p>
+                    </div>
+                </div>
+                <div class="mj-2">
+                    <div class="chy-1">
+                        <img src="images/laohongtang.jpg" alt="peoject 5" width="370px" height="240">
+                        <h3>老红糖</h3>
+                        <p>崇左</p>                
+                    </div>
+                    <div class="chy-2"><img src="images/zhitianjiao3.jpg" alt="peoject 5" width="370" height="240">
+                        <h3>指天椒</h3>
+                        <p>崇左</p>
+                    </div>
+                    <div class="chy-3"><img src="images/longtousuancai1.jpg" alt="peoject 5" width="370" height="240">
+                        <h3>龙头酸菜</h3>
+                        <p>崇左</p>
+                    </div>
+                </div>
+                <div class="mj-3">
+                    <div class="chy-1"><img src="images/laya1.jpg" alt="peoject 5" width="370" height="240">
+                    <h3>腊鸭</h3>
+                    <p>崇左</p>
+                   </div>
+                    <div class="chy-2"><img src="images/blmi1.jpg" alt="peoject 5" width="370" height="240">
+                    <h3>波罗蜜</h3>
+                     <p>崇左</p>
+                        </div>
+                    <div class="chy-3"><img src="images/shagao1.jpg" alt="peoject 5" width="370" height="240">
+                       <h3>沙糕</h3>
+                        <p>崇左</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wenyi">
+   	  <div class="wenyi-1">
+   		<h2>看看我们客户说什么？</h2>
+          <p>我们在客户里面选了一些客户，来看看他们都说了什么？</p>
+        </div>
+    <div class="bzd">
+        <div class="bzd-1">
+           
+              <div class="bzd-1-1" style="color: #000">
+                 <p1>"芒果炒鸡新鲜，满满的一箱子，够吃一阵了，特别喜欢芒果清香又甜的味道，怎么吃都吃不腻，一箱子一个坏的都没有，每一个都不错，挑不出来毛病，皮薄核小，是有良心的哦。"
+</p1>  
+              </div>
+              <div class=" khkk"></div>
+           <div class="bzd-23">
+              <div class="bzd-1-2"><img  src="images/tx2.jpg" width="60" height="60"></div>
+              
+              <div class="bzd-1-3" style="color: #FC0">无吃不欢</div>
+           </div>
+        </div>
+        <div class="bzd-2">
+            <div class="bzd-2-1" style="color: #000">
+                <p1>"享受，回味 做为一个专业吃货，觉得一种美食的魔力在于能够让您在享用之后，依旧留恋望返。 特别是在纠结吃什么的时候，能够让你立即想起来的美食。 或者在你伤心难过的时候，有一种味道能够缓解你的伤痛抚平心灵。 "</p1>
+            </div>
+            <div class=" khkk"></div>
+            <div class="bzd-23">
+            <div class="bzd-2-2"><img src="images/tx.jpg" width="60" height="60"></div>
+            <div class="bzd-2-3" style="color: #FC0">奇奇怪怪</div>
+        </div>
+        </div>
+        <div class="bzd-3">
+             <div class="bzd-3-1" style="color: #000">
+                <p1>"色、香、味俱全，让人看着就有食欲；味道鲜美，让人闻着就想尝尝味道；口感好，吃过一次就忘不掉。让我想到了我的家乡。 "</p1>
+            </div>
+            <div class=" khkk"></div>
+            <div class="bzd-23">
+            <div class="bzd-3-2"><img src="images/tx1.jpg" width="60" height="60"></div>
+            <div class="bzd-3-3" style="color: #FC0">热心市民杨先生</div>
+        </div>
+        </div>
+        </div><div class="bzd-4">
+            <p>"难舍故乡亲，更难舍故乡情。游子们寄乡愁于酒上，托感情于杜康。人在远方，让我们给你带来家的味道"</p>
+        </div>
+        </div>
+    </div>
+    <div class="lqy">
+       <div class="lqy-1"></div>
+        <div class="lqy-2">
+          <div class="py"><h2>和我们合作的企业：</h2></div>
+          <div class="py-1">
+            <div class="pytp div_img2"></div>
+            <div class="pytp div_img5"></div>
+            <div class="pytp div_img3"></div>
+            <div class="pytp div_img4"></div>
+            <div class="pytp div_img1"></div>
+          </div>
+        </div>
+       </div>
+      </div>
+    </div> 
+    <div class="lqy-3">
+        <div class="foot_div">
+            <h5 class="foot_p">公司总部：亚洲中国的山沟沟里的小道第17棵树的树洞</h5>
+            <h5 class="foot_p">邮政编码：666666   山沟沟备11002359</h5>
+            <h5 class="foot_p">联系电话：10086110</h5>
+        </div>       
+    </div>    
+</body>
+</html>
